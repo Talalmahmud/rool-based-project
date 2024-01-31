@@ -1,5 +1,6 @@
 "use client";
 import { signIn, signOut, useSession } from "next-auth/react";
+import Image from "next/image";
 import React from "react";
 
 type Props = {};
@@ -17,6 +18,9 @@ const Navbar = (props: Props) => {
           >
             Logout
           </span>
+          <div className=" relative overflow-auto rounded-full h-[40px] w-[40px]">
+            <Image src={session.user.image} alt="" fill />
+          </div>
         </div>
       </>
     );
